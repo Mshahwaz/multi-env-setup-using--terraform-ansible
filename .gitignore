@@ -4,3 +4,7 @@ terraform/.terraform.lock.hcl
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 terraform/multi-env-key-*
+terraform/backends/.terraform/*
+terraform/backends/.terraform.lock.hcl
+terraform/backends/terraform.tf*
+
