@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frontend Demo</title>
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --secondary-color: #6d28d9;
+      --bg-color: #f9fafb;
+      --text-color: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 90%;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #4b5563;
+    }
+
+    button {
+      background: var(--primary-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--secondary-color);
+    }
+
+    .output {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      color: var(--secondary-color);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .visible {
+      opacity: 1;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(10px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to My App</h1>
+    <p>This is a simple HTML+CSS+JS demo for Nginx deployment.</p>
+    <button onclick="showMessage()">Click Me</button>
+    <div id="output" class="output">Hello there! 🎉</div>
+  </div>
+
+  <script>
+    function showMessage() {
+      const el = document.getElementById('output');
+      el.classList.add('visible');
+    }
+  </script>
+</body>
+</html>

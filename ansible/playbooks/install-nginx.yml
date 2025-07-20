@@ -1,0 +1,20 @@
+-
+    name: Install nginx and deploy sample web server
+    hosts: servers
+    become: True
+    tasks:
+       -    name: Installing nginx
+            apt: 
+                name: nginx
+                state: latest
+            
+       -    name: Starting nginx 
+            service:
+                name: nginx
+                state: started
+                enabled: yes
+
+       -    name: Deploying Sample web server
+            copy: 
+                src: index.html
+                dest: /var/www/html/index.html 
